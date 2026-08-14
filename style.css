@@ -29,3 +29,26 @@ body {
 .profile-card p {
     color: #666;
 }
+
+.skills {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.skills h2 {
+    margin-bottom: 15px;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.skill-list span {
+    padding: 8px 14px;
+    background: #eeeeee;
+    border-radius: 20px;
+    font-size: 14px;
+}
