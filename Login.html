@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanjay - Professional Login</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Side - Branding -->
+        <div class="brand-section">
+            <div class="brand-content">
+                <div class="logo">
+                    <i class="fas fa-code"></i>
+                    <span>Sanjay.dev</span>
+                </div>
+                <h1>Welcome Back!</h1>
+                <p>Sign in to continue your journey with us</p>
+                <div class="features">
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Secure Login</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-rocket"></i>
+                        <span>Fast Access</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-headset"></i>
+                        <span>24/7 Support</span>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="avatar-group">
+                        <img src="https://ui-avatars.com/api/?name=Sanjay&background=6C63FF&color=fff&size=40" alt="User">
+                        <img src="https://ui-avatars.com/api/?name=Rahul&background=FF6B6B&color=fff&size=40" alt="User">
+                        <img src="https://ui-avatars.com/api/?name=Priya&background=4ECDC4&color=fff&size=40" alt="User">
+                    </div>
+                    <p>"Best developer platform I've ever used!"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side - Login Form -->
+        <div class="form-section">
+            <div class="form-wrapper">
+                <div class="form-header">
+                    <h2>Sign In</h2>
+                    <p>Enter your credentials to access your account</p>
+                </div>
+
+                <form id="loginForm" onsubmit="handleLogin(event)">
+                    <!-- Email Field -->
+                    <div class="input-group">
+                        <label for="email">
+                            <i class="fas fa-envelope"></i>
+                            Email Address
+                        </label>
+                        <div class="input-wrapper">
+                            <input type="email" id="email" placeholder="your@email.com" required>
+                            <div class="input-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                        </div>
+                        <div class="error-message" id="emailError"></div>
+                    </div>
+
+                    <!-- Password Field -->
+                    <div class="input-group">
+                        <label for="password">
+                            <i class="fas fa-lock"></i>
+                            Password
+                        </label>
+                        <div class="input-wrapper">
+                            <input type="password" id="password" placeholder="Enter your password" required>
+                            <div class="input-icon toggle-password" onclick="togglePassword()">
+                                <i class="fas fa-eye" id="eyeIcon"></i>
+                            </div>
+                        </div>
+                        <div class="error-message" id="passwordError"></div>
+                    </div>
+
+                    <!-- Remember Me & Forgot Password -->
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" checked>
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="forgot-link">Forgot Password?</a>
+                    </div>
+
+                    <!-- Login Button -->
+                    <button type="submit" class="login-btn">
+                        <span>Sign In</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                    <!-- Social Login -->
+                    <div class="divider">
+                        <span>Or continue with</span>
+                    </div>
+
+                    <div class="social-login">
+                        <button type="button" class="social-btn google">
+                            <i class="fab fa-google"></i>
+                            Google
+                        </button>
+                        <button type="button" class="social-btn github">
+                            <i class="fab fa-github"></i>
+                            GitHub
+                        </button>
+                    </div>
+
+                    <p class="signup-text">
+                        Don't have an account? <a href="#">Sign Up</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
