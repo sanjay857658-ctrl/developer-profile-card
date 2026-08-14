@@ -1,303 +1,888 @@
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanjay.dev - Home</title>
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- ====== NAVBAR ====== -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <i class="fas fa-code"></i>
-                <span>Sanjay.dev</span>
-            </div>
-            
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+/* ====== RESET & BASE ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-            <div class="nav-actions">
-                <button class="theme-toggle" onclick="toggleTheme()">
-                    <i class="fas fa-moon" id="themeIcon"></i>
-                </button>
-                <button class="logout-btn" onclick="logout()">
-                    <i class="fas fa-sign-out-alt"></i>
-                    <span>Logout</span>
-                </button>
-                <div class="hamburger" onclick="toggleMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </div>
-    </nav>
+html {
+    scroll-behavior: smooth;
+}
 
-    <!-- ====== HERO SECTION ====== -->
-    <section class="hero" id="home">
-        <div class="hero-container">
-            <div class="hero-content">
-                <span class="badge">🚀 Welcome Back, Sanjay!</span>
-                <h1>Building the <span>Future</span> of Web</h1>
-                <p>Software Developer & Creative Technologist passionate about creating beautiful, functional, and user-centric digital experiences.</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn-primary">
-                        <i class="fas fa-rocket"></i> View My Work
-                    </a>
-                    <a href="#contact" class="btn-secondary">
-                        <i class="fas fa-paper-plane"></i> Let's Connect
-                    </a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">5+</span>
-                        <span class="stat-label">Projects</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">2+</span>
-                        <span class="stat-label">Experience</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">10+</span>
-                        <span class="stat-label">Clients</span>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="profile-avatar">
-                    <img src="https://ui-avatars.com/api/?name=Sanjay&background=667eea&color=fff&size=200&font-size=0.5" alt="Sanjay">
-                    <div class="floating-badge badge-1">
-                        <i class="fas fa-code"></i>
-                        <span>8 hrs coding</span>
-                    </div>
-                    <div class="floating-badge badge-2">
-                        <i class="fas fa-trophy"></i>
-                        <span>5+ projects</span>
-                    </div>
-                    <div class="floating-badge badge-3">
-                        <i class="fas fa-users"></i>
-                        <span>10+ clients</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="hero-wave">
-            <svg viewBox="0 0 1440 100">
-                <path fill="#f8fafc" d="M0,50 C360,100 720,0 1080,50 C1260,75 1380,60 1440,50 L1440,100 L0,100 Z"/>
-            </svg>
-        </div>
-    </section>
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f8fafc;
+    color: #1a202c;
+    overflow-x: hidden;
+}
 
-    <!-- ====== ABOUT SECTION ====== -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">About Me</span>
-                <h2>Passionate Developer & Problem Solver</h2>
-                <p>I create digital solutions that make a difference</p>
-            </div>
-            <div class="about-grid">
-                <div class="about-card">
-                    <i class="fas fa-code"></i>
-                    <h3>Clean Code</h3>
-                    <p>Writing maintainable, efficient, and scalable code with best practices.</p>
-                </div>
-                <div class="about-card">
-                    <i class="fas fa-palette"></i>
-                    <h3>Creative Design</h3>
-                    <p>Designing modern, responsive, and user-friendly interfaces.</p>
-                </div>
-                <div class="about-card">
-                    <i class="fas fa-rocket"></i>
-                    <h3>Fast Delivery</h3>
-                    <p>Rapid development with attention to detail and quality.</p>
-                </div>
-                <div class="about-card">
-                    <i class="fas fa-headset"></i>
-                    <h3>24/7 Support</h3>
-                    <p>Always available for support and collaboration.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-    <!-- ====== SKILLS SECTION ====== -->
-    <section class="skills" id="skills">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">My Skills</span>
-                <h2>Technologies I Work With</h2>
-                <p>Constantly learning and expanding my toolkit</p>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <div class="skill-icon html"><i class="fab fa-html5"></i></div>
-                    <div class="skill-info">
-                        <h4>HTML5</h4>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 90%"></div>
-                        </div>
-                        <span>90%</span>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-icon css"><i class="fab fa-css3-alt"></i></div>
-                    <div class="skill-info">
-                        <h4>CSS3</h4>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 85%"></div>
-                        </div>
-                        <span>85%</span>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-icon js"><i class="fab fa-js"></i></div>
-                    <div class="skill-info">
-                        <h4>JavaScript</h4>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 75%"></div>
-                        </div>
-                        <span>75%</span>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-icon git"><i class="fab fa-git-alt"></i></div>
-                    <div class="skill-info">
-                        <h4>Git & GitHub</h4>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 80%"></div>
-                        </div>
-                        <span>80%</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
 
-    <!-- ====== PROJECTS SECTION ====== -->
-    <section class="projects" id="projects">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Portfolio</span>
-                <h2>Featured Projects</h2>
-                <p>Some of my recent work</p>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #667eea, #764ba2);">
-                        <i class="fas fa-user-circle"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Profile Card</h3>
-                        <p>Personal developer portfolio with modern design</p>
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>GitHub</span>
-                        </div>
-                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Login System</h3>
-                        <p>Professional login page with validation</p>
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JS</span>
-                        </div>
-                        <a href="login.html" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
-                        <i class="fas fa-dashboard"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Dashboard UI</h3>
-                        <p>Admin dashboard with analytics</p>
-                        <div class="project-tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JS</span>
-                        </div>
-                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+.section-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
 
-    <!-- ====== CONTACT SECTION ====== -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Contact</span>
-                <h2>Let's Work Together</h2>
-                <p>Have a project in mind? Let's connect!</p>
-            </div>
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>sanjay@example.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+91 98765 43210</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Location</h4>
-                            <p>India</p>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <form class="contact-form" onsubmit="sendMessage(event)">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea rows="4" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn-primary">
-                        <i class="fas fa-paper-plane"></i> Send Message
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
+.section-header h2 {
+    font-size: 38px;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 10px;
+}
 
-    <!-- ====== FOOTER ====== -->
-    <footer>
-        <div class="container">
-            <p>© 2026 Sanjay.dev. Made with <i class="fas fa-heart" style="color: #fc8181;"></i> in India</p>
-        </div>
-    </footer>
+.section-header p {
+    color: #718096;
+    font-size: 16px;
+}
 
-    <script src="home.js"></script>
-</body>
-</html>
+/* ====== NAVBAR ====== */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 12px 0;
+    transition: all 0.3s;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #2d3748;
+    cursor: pointer;
+}
+
+.nav-logo i {
+    color: #667eea;
+    font-size: 26px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #4a5568;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: #667eea;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.theme-toggle,
+.logout-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 10px;
+    transition: all 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.theme-toggle {
+    background: #f1f5f9;
+    color: #2d3748;
+}
+
+.theme-toggle:hover {
+    background: #e2e8f0;
+}
+
+.logout-btn {
+    background: linear-gradient(135deg, #fc8181, #f56565);
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    transition: all 0.3s;
+}
+
+.logout-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(245, 101, 101, 0.4);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #2d3748;
+    border-radius: 3px;
+    transition: all 0.3s;
+}
+
+/* ====== HERO SECTION ====== */
+.hero {
+    padding: 120px 0 80px;
+    background: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-content .badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea20, #764ba220);
+    color: #667eea;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border: 1px solid #667eea30;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #1a202c;
+}
+
+.hero-content h1 span {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-content p {
+    font-size: 17px;
+    color: #4a5568;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 30px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.35);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(102, 126, 234, 0.45);
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 30px;
+    background: white;
+    color: #4a5568;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    border-color: #667eea;
+    color: #667eea;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.hero-stats {
+    display: flex;
+    gap: 40px;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2d3748;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #718096;
+}
+
+/* Hero Image */
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-avatar {
+    position: relative;
+    width: 350px;
+    height: 350px;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+    border: 6px solid white;
+}
+
+.floating-badge {
+    position: absolute;
+    background: white;
+    padding: 10px 18px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #2d3748;
+    animation: float 3s ease-in-out infinite;
+}
+
+.floating-badge i {
+    color: #667eea;
+}
+
+.badge-1 {
+    top: 20px;
+    right: -20px;
+    animation-delay: 0s;
+}
+
+.badge-2 {
+    bottom: 60px;
+    left: -30px;
+    animation-delay: 1s;
+}
+
+.badge-3 {
+    bottom: -10px;
+    right: 20px;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Wave */
+.hero-wave {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+}
+
+/* ====== ABOUT SECTION ====== */
+.about {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+.about-card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 16px;
+    text-align: center;
+    transition: all 0.3s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+}
+
+.about-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+
+.about-card i {
+    font-size: 40px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 16px;
+}
+
+.about-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.about-card p {
+    color: #718096;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ====== SKILLS SECTION ====== */
+.skills {
+    padding: 80px 0;
+    background: white;
+}
+
+.skills-grid {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #f8fafc;
+    padding: 18px 25px;
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+
+.skill-item:hover {
+    transform: translateX(8px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.skill-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 28px;
+    flex-shrink: 0;
+}
+
+.skill-icon.html { background: #e34f2615; color: #e34f26; }
+.skill-icon.css { background: #264de415; color: #264de4; }
+.skill-icon.js { background: #f7df1e15; color: #f7df1e; }
+.skill-icon.git { background: #f0503315; color: #f05033; }
+
+.skill-info {
+    flex: 1;
+}
+
+.skill-info h4 {
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 4px;
+    transition: width 1s ease;
+}
+
+.skill-info span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #667eea;
+    margin-left: 8px;
+}
+
+/* ====== PROJECTS SECTION ====== */
+.projects {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    transition: all 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+}
+
+.project-image {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: white;
+}
+
+.project-image i {
+    font-size: 60px;
+    opacity: 0.8;
+}
+
+.project-info {
+    padding: 25px;
+}
+
+.project-info h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.project-info p {
+    color: #718096;
+    font-size: 14px;
+    margin-bottom: 14px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.project-tags span {
+    background: #f1f5f9;
+    padding: 4px 14px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #4a5568;
+}
+
+.project-link {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.project-link:hover {
+    gap: 14px;
+    color: #764ba2;
+}
+
+/* ====== CONTACT SECTION ====== */
+.contact {
+    padding: 80px 0;
+    background: white;
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    background: #f8fafc;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.contact-item i {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-radius: 12px;
+    font-size: 20px;
+}
+
+.contact-item h4 {
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+.contact-item p {
+    color: #718096;
+    font-size: 14px;
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 10px;
+    color: #4a5568;
+    font-size: 20px;
+    transition: all 0.3s;
+    text-decoration: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+
+.social-links a:hover {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    transform: translateY(-4px);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 14px 18px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: all 0.3s;
+    background: white;
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+/* ====== FOOTER ====== */
+footer {
+    padding: 30px 0;
+    background: #1a202c;
+    color: #a0aec0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 1024px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .profile-avatar {
+        width: 280px;
+        height: 280px;
+    }
+
+    .badge-1 { top: 10px; right: -10px; font-size: 12px; padding: 8px 14px; }
+    .badge-2 { bottom: 40px; left: -20px; font-size: 12px; padding: 8px 14px; }
+    .badge-3 { bottom: 0; right: 10px; font-size: 12px; padding: 8px 14px; }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        gap: 16px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .logout-btn span {
+        display: none;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        padding: 25px;
+    }
+
+    .section-header h2 {
+        font-size: 28px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 26px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-stats {
+        gap: 20px;
+    }
+
+    .profile-avatar {
+        width: 200px;
+        height: 200px;
+    }
+
+    .floating-badge {
+        display: none;
+    }
+}
+
+/* ====== DARK THEME ====== */
+body.dark {
+    background: #0f172a;
+    color: #f1f5f9;
+}
+
+body.dark .navbar {
+    background: rgba(15, 23, 42, 0.95);
+}
+
+body.dark .nav-logo {
+    color: #f1f5f9;
+}
+
+body.dark .nav-links a {
+    color: #94a3b8;
+}
+
+body.dark .nav-links a:hover {
+    color: #818cf8;
+}
+
+body.dark .hero {
+    background: #0f172a;
+}
+
+body.dark .hero-content p {
+    color: #94a3b8;
+}
+
+body.dark .stat-number {
+    color: #f1f5f9;
+}
+
+body.dark .about {
+    background: #1e293b;
+}
+
+body.dark .about-card {
+    background: #0f172a;
+    color: #f1f5f9;
+}
+
+body.dark .about-card p {
+    color: #94a3b8;
+}
+
+body.dark .skills {
+    background: #0f172a;
+}
+
+body.dark .skill-item {
+    background: #1e293b;
+    color: #f1f5f9;
+}
+
+body.dark .projects {
+    background: #1e293b;
+}
+
+body.dark .project-card {
+    background: #0f172a;
+    color: #f1f5f9;
+}
+
+body.dark .project-card p {
+    color: #94a3b8;
+}
+
+body.dark .project-tags span {
+    background: #1e293b;
+    color: #94a3b8;
+}
+
+body.dark .contact {
+    background: #0f172a;
+}
+
+body.dark .contact-wrapper {
+    background: #1e293b;
+}
+
+body.dark .contact-item p {
+    color: #94a3b8;
+}
+
+body.dark .social-links a {
+    background: #0f172a;
+    color: #94a3b8;
+}
+
+body.dark .social-links a:hover {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+body.dark .contact-form input,
+body.dark .contact-form textarea {
+    background: #0f172a;
+    border-color: #334155
