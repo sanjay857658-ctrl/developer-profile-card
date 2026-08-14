@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f4f4;
+}
+
+.profile-card {
+    width: 350px;
+    padding: 30px;
+    text-align: center;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.profile-card h1 {
+    margin-bottom: 10px;
+}
+
+.profile-card p {
+    color: #666;
+}
