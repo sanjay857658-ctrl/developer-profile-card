@@ -1,31 +1,303 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developer Profile</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Sanjay.dev - Home</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- ====== NAVBAR ====== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-code"></i>
+                <span>Sanjay.dev</span>
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
 
-<body>
+            <div class="nav-actions">
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <div class="profile-card">
-        <h1>Sanjay</h1>
-        <p>Software Developer & Creative Technologist</p>
-    </div>
+    <!-- ====== HERO SECTION ====== -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="badge">🚀 Welcome Back, Sanjay!</span>
+                <h1>Building the <span>Future</span> of Web</h1>
+                <p>Software Developer & Creative Technologist passionate about creating beautiful, functional, and user-centric digital experiences.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn-primary">
+                        <i class="fas fa-rocket"></i> View My Work
+                    </a>
+                    <a href="#contact" class="btn-secondary">
+                        <i class="fas fa-paper-plane"></i> Let's Connect
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">2+</span>
+                        <span class="stat-label">Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Clients</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-avatar">
+                    <img src="https://ui-avatars.com/api/?name=Sanjay&background=667eea&color=fff&size=200&font-size=0.5" alt="Sanjay">
+                    <div class="floating-badge badge-1">
+                        <i class="fas fa-code"></i>
+                        <span>8 hrs coding</span>
+                    </div>
+                    <div class="floating-badge badge-2">
+                        <i class="fas fa-trophy"></i>
+                        <span>5+ projects</span>
+                    </div>
+                    <div class="floating-badge badge-3">
+                        <i class="fas fa-users"></i>
+                        <span>10+ clients</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 100">
+                <path fill="#f8fafc" d="M0,50 C360,100 720,0 1080,50 C1260,75 1380,60 1440,50 L1440,100 L0,100 Z"/>
+            </svg>
+        </div>
+    </section>
 
-<section class="skills">
-    <h2>Skills</h2>
+    <!-- ====== ABOUT SECTION ====== -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">About Me</span>
+                <h2>Passionate Developer & Problem Solver</h2>
+                <p>I create digital solutions that make a difference</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Clean Code</h3>
+                    <p>Writing maintainable, efficient, and scalable code with best practices.</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-palette"></i>
+                    <h3>Creative Design</h3>
+                    <p>Designing modern, responsive, and user-friendly interfaces.</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Fast Delivery</h3>
+                    <p>Rapid development with attention to detail and quality.</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Always available for support and collaboration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="skill-list">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>Git</span>
-        <span>GitHub</span>
-    </div>
-</section>
+    <!-- ====== SKILLS SECTION ====== -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">My Skills</span>
+                <h2>Technologies I Work With</h2>
+                <p>Constantly learning and expanding my toolkit</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-icon html"><i class="fab fa-html5"></i></div>
+                    <div class="skill-info">
+                        <h4>HTML5</h4>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 90%"></div>
+                        </div>
+                        <span>90%</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon css"><i class="fab fa-css3-alt"></i></div>
+                    <div class="skill-info">
+                        <h4>CSS3</h4>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 85%"></div>
+                        </div>
+                        <span>85%</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon js"><i class="fab fa-js"></i></div>
+                    <div class="skill-info">
+                        <h4>JavaScript</h4>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%"></div>
+                        </div>
+                        <span>75%</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon git"><i class="fab fa-git-alt"></i></div>
+                    <div class="skill-info">
+                        <h4>Git & GitHub</h4>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 80%"></div>
+                        </div>
+                        <span>80%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- ====== PROJECTS SECTION ====== -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Portfolio</span>
+                <h2>Featured Projects</h2>
+                <p>Some of my recent work</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Profile Card</h3>
+                        <p>Personal developer portfolio with modern design</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>GitHub</span>
+                        </div>
+                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Login System</h3>
+                        <p>Professional login page with validation</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JS</span>
+                        </div>
+                        <a href="login.html" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                        <i class="fas fa-dashboard"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Dashboard UI</h3>
+                        <p>Admin dashboard with analytics</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JS</span>
+                        </div>
+                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== CONTACT SECTION ====== -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Contact</span>
+                <h2>Let's Work Together</h2>
+                <p>Have a project in mind? Let's connect!</p>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>sanjay@example.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 98765 43210</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>India</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form" onsubmit="sendMessage(event)">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea rows="4" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Sanjay.dev. Made with <i class="fas fa-heart" style="color: #fc8181;"></i> in India</p>
+        </div>
+    </footer>
+
+    <script src="home.js"></script>
 </body>
 </html>
