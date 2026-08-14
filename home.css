@@ -885,4 +885,35 @@ body.dark .social-links a:hover {
 body.dark .contact-form input,
 body.dark .contact-form textarea {
     background: #0f172a;
-    border-color: #334155
+    border-color: #334155;
+    color: #f1f5f9;
+}
+
+body.dark .contact-form input:focus,
+body.dark .contact-form textarea:focus {
+    border-color: #818cf8;
+}
+
+body.dark .btn-secondary {
+    background: #0f172a;
+    border-color: #334155;
+    color: #94a3b8;
+}
+
+body.dark .btn-secondary:hover {
+    border-color: #818cf8;
+    color: #818cf8;
+}
+
+body.dark .theme-toggle {
+    background: #1e293b;
+    color: #f1f5f9;
+}
+
+body.dark .section-header h2 {
+    color: #f1f5f9;
+}
+
+body.dark .section-header p {
+    color: #94a3b8;
+}
